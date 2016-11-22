@@ -13,8 +13,8 @@
 function Paddle() {
 	this.sprite;
 	this.position
-	this.width
-	this.height
+	this.width=30;
+	this.height=30;
 }
 /**
  * loads sprite for the paddle
@@ -22,7 +22,8 @@ function Paddle() {
  */
 this.LoadPaddleSprite = function() {
 		this.sprite = new Image();
-		this.sprite.addEventListener("load", funtion()) {
+		this.sprite.addEventListener("load", funtion()) 
+		{
 			this.width = this.sprite.width;
 			this.height = this.sprite.height;
 		}
@@ -34,4 +35,9 @@ this.LoadPaddleSprite = function() {
  */
 this.movepaddle = function(newPos) {
 	this.position = newPos; // this plaes the padde directly to where the new position is, maybe an acceleration here?
+}
+
+this.draw=function()
+{
+	app.ctx.fillRect(this.position.x, this.position.y, t.width, this.height);//draws a rectangle as a placeholder
 }

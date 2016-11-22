@@ -12,7 +12,7 @@
  */
 function SceneManager() {
 	this.currentScene;
-	this.sceneList;
+	var sceneList=[];
 
 	/**
 	 * Push string name of scne to list
@@ -22,6 +22,7 @@ function SceneManager() {
 		if(sceneList != null) 
 		{
 			sceneList.push(newScene);
+			currentScene=newScene;
 		}
 		else 
 		{
