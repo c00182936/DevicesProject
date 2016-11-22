@@ -12,10 +12,10 @@
  */
 function Paddle() {
 	this.sprite;
-	this.position
+	this.positionX=0;
+	this.positionY=0;
 	this.width=30;
 	this.height=30;
-}
 /**
  * loads sprite for the paddle
  * @param {vect2} newScene -
@@ -33,11 +33,24 @@ this.LoadPaddleSprite = function() {
  * moves the paddle to a new location
  * @param {vect2} newPos - new postion of the paddle
  */
-this.movepaddle = function(newPos) {
-	this.position = newPos; // this plaes the padde directly to where the new position is, maybe an acceleration here?
+this.movepaddle = function(newPosx, newPosy) {
+	this.positionX = newPosx; // this plaes the padde directly to where the new position is, maybe an acceleration here?
+	this.positionY = newPosy;
 }
-
+this.getY = function();
+{
+	return this.positionY;
+}
+this.getX = function();
+{
+	return this.positionX;
+}
 this.draw=function()
 {
-	app.ctx.fillRect(this.position.x, this.position.y, t.width, this.height);//draws a rectangle as a placeholder
+	app.ctx.fillStyle= "blue";
+	app.ctx.fillRect(this.positionX, this.positionY, this.width, this.height);//draws a rectangle as a placeholder
 }
+
+
+}
+

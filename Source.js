@@ -19,7 +19,8 @@
 	//document.addEventListener("keydown",keyDownHandler);//solely for placeholder, we'll replace with touch once we have things working a bit better
 	canvas.height = window.innerHeight;
 	canvas.width = window.innerWidth;
-
+	var bar= new Paddle();
+	bar.movepaddle(20,20);
  	setInterval(onTimerTick, 33.3);//to update at 30fps
 
 	var scene =new SceneManager();
@@ -28,10 +29,11 @@
 	scene.addScene("m");
 	console.log(scene.getScene());
  	function onTimerTick() {//update loop to be called
-
+ 		draw();
  	}
 
  	function draw(){
 		app.ctx.clearRect(0,0,canvas.width, canvas.height);//clears before drawing
+		bar.draw();
  	}
  }
